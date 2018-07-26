@@ -109,6 +109,8 @@ let magic = {real: 'x', fake: 'y'} // this is a seperator and not a comma operat
 
 
 ////////
+// Operator precendence
+////////
 
 let precendence1 = 1 + 4 * 2; // 9, wierd
 let precendence2 = (1 + 4) * 2; // 10, ( is highest precendence)
@@ -116,3 +118,11 @@ let precendence3 = 2 + 10 - 2; // 10
 let precendence4 = 2 - 10 + 2; // -6 fuck it, makes no sense when compared to precendence1!!!!
 
 console.log(precendence4); //false
+
+////////
+// Reserved Words
+////////
+let myThing1; //good
+let 1thing //bad as cant begin with number
+mySpecialVariable != myspecialvariable; //nopt the same as casing is important!
+var function = 'opps'; //reversed word bitches, notice the underlined scribble.
