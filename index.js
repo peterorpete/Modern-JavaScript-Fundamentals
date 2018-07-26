@@ -103,5 +103,16 @@ console.log(false || false); //false
 
 console.log(!true); //false
 
-let x = 'hello', y= 'world';
-let obj = {x: 'x', y: 'y'}
+let first = 'hello', second= 'world'; //comma operator only last value gets return for some reason. SO world is the returned value. Fuck knows the point of this yet!
+// https://stackoverflow.com/questions/52550/what-does-the-comma-operator-do
+let magic = {real: 'x', fake: 'y'} // this is a seperator and not a comma operator!
+
+
+////////
+
+let precendence1 = 1 + 4 * 2; // 9, wierd
+let precendence2 = (1 + 4) * 2; // 10, ( is highest precendence)
+let precendence3 = 2 + 10 - 2; // 10
+let precendence4 = 2 - 10 + 2; // -6 fuck it, makes no sense when compared to precendence1!!!!
+
+console.log(precendence4); //false
