@@ -1,5 +1,4 @@
-﻿'use strict';
-
+﻿
 // Variables
 ////////////////////////////////
 var foo = 42;
@@ -72,10 +71,10 @@ subtractionAssignment -= 5; //5
 1 >= 2; //false
 1 < 2; //true
 1 <= 2; //true
-let x = 5 ** 2; // mutliples first (5) by itself by the second amount (2) 5x2
-let y = 5 ** 3;
-console.log(x); // 25
-console.log(y); // 125
+let ExponentiationOperatorX  = 5 ** 2; // mutliples first (5) by itself by the second amount (2) 5x2
+let ExponentiationOperatorY = 5 ** 3;
+console.log(ExponentiationOperatorX); // 25
+console.log(ExponentiationOperatorY); // 125
 
 ////////
 
@@ -123,6 +122,18 @@ console.log(precendence4); //false
 // Reserved Words
 ////////
 let myThing1; //good
-let 1thing //bad as cant begin with number
-mySpecialVariable != myspecialvariable; //nopt the same as casing is important!
-var function = 'opps'; //reversed word bitches, notice the underlined scribble.
+// let 1thing //bad as cant begin with number
+// mySpecialVariable != myspecialvariable; //not the same as casing is important!
+// var function = 'opps'; //reversed word bitches, notice the underlined scribble.
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
+
+////////
+// Scrict mode
+////////
+ // most legends wrap thier javascript in a function to make sure everything is in strict mode.
+ //strict mode shows errors for us
+(function () {
+    'use strict';
+    NaN = 'whatever!';//brings back error as using strict mode, if you remove strict mode it doesnt show the errors
+    // put stuff in here
+})();
