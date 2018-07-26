@@ -134,6 +134,33 @@ let myThing1; //good
  //strict mode shows errors for us
 (function () {
     'use strict';
-    NaN = 'whatever!';//brings back error as using strict mode, if you remove strict mode it doesnt show the errors
+    //NaN = 'whatever!';//brings back error as using strict mode, if you remove strict mode it doesnt show the errors
     // put stuff in here
+
+
+    ////////
+    // Functions
+    ////////
+    function function1(msg, msg2) {
+        console.log(msg);
+    } // () parameters go in here. {} is where the expressions go in
+    function1(); //runs the function we made
+    function1('i\'m alive!'); //runs the function we made with the msg parameters
+    function1('i\'m tired!'); //runs the same function with different string using the msg parameters
+
+    function logArgs() {
+        console.log(arguments); // not sure what arguments are yet
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+        return 'some value';
+    } 
+    logArgs('these', 'are', 'arguments'); //some value
+
+
+    let f = function f() {}; //f is a function expression. The second f is an identifier that makes the function a named function rather than an anonomous function.
+    f();
+
+    function log() {
+        console.log(testVariable); //declares undefined as function went through and declared variables first and then excuted the code. Only happens in var,so use let and const instead as they dont have this problem
+        var testVariable = 'test'; //order of variable dont matter inside functions, BUT console log declared undefined. read above
+    }
 })();
