@@ -132,6 +132,7 @@ let myThing1; //good
 ////////
  // most legends wrap thier javascript in a function to make sure everything is in strict mode.
  //strict mode shows errors for us
+
 (function () {
     'use strict';
     //NaN = 'whatever!';//brings back error as using strict mode, if you remove strict mode it doesnt show the errors
@@ -164,13 +165,36 @@ let myThing1; //good
         var testVariable = 'test'; //order of variable dont matter inside functions, BUT console log declared undefined. read above
     }
 })();
+////////
+// Objects
+////////
 (function () {
     'use strict';
 
-    let myArray = new Array(1);
-    let myArray2 = ['a value', 'second value', 'third value']; //recommend to use this form of array creation
-    myArray2[1]; // second value
-    myArray2[myArray2.length - 1]; // third value. 
-    myArray2[99] = 'something'; //adds 100 undefined items to the array, the exisiting one will stay there though
-})();
+    let myObject = {
+            property1: 'hello',
+            property2: true
+    }; // recommend way of writing objects
+    
+    let obj = new Object(); // not recomended to use
 
+    myObject.property1; // 'hello'
+    myObject['property1']; // 'hello'
+
+    myObject.property3 = false; //creates a new value (mor common method)
+    myObject['property4'] = 'something'; //create a new value
+
+    function getThingsByColor(color) {
+        let things = {
+            red: 'a red thing',
+            green: 'a green thing',
+            blue: 'a blue thing',
+        };
+
+        return things[color] || 'Sorry, no thing of that color exists';
+    }
+    console.log(getThingsByColor('red')); // a red thing
+    console.log(getThingsByColor('blue')); // a blue thing
+    console.log(getThingsByColor('')); // Sorry, no thing of that color exists
+    
+})();
