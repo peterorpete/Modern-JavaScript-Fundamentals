@@ -228,6 +228,27 @@ let myThing1; //good
     let myMap = new Map();
     let myMap2 = new Map([['a','b'],[1,2]]); 
     myMap2.set('c',3); //add new key thats string value c and a value of 3
-    console.log(myMap2.get('c')); 
+    console.log(myMap2.get('c')); //3
+})();
+
+////////
+// Weak Maps and Weak Sets
+////////
+(function () {
+    'use strict';
+
+    let myWeakSet = new WeakSet();
+    let someObj = {};
+    myWeakSet.add(someObj);
+    console.log(myWeakSet.has(someObj)); //true
+
+    myWeakSet.delete(someObj);
+    console.log(myWeakSet.has(someObj)); //false
+
+    ///
+
+    let myWeakMap = new WeakMap();
+    let someObj = {};
+
 
 })();
