@@ -218,3 +218,16 @@ let myThing1; //good
     console.log(mySet2.delete(6)); // false
     console.log(mySet2.has(3)); // true!!!
 })();
+
+////////
+// Maps
+////////
+(function () {
+    'use strict';
+
+    let myMap = new Map();
+    let myMap2 = new Map([['a','b'],[1,2]]); 
+    myMap2.set('c',3); //add new key thats string value c and a value of 3
+    console.log(myMap2.get('c')); 
+
+})();
