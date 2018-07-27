@@ -248,7 +248,47 @@ let myThing1; //good
     ///
 
     let myWeakMap = new WeakMap();
-    let someObj = {};
 
+
+})();
+
+////////
+// If statements
+////////
+(function () {
+    'use strict';
+
+    if (1+1 === 2) {
+        console.log('the condition is true');
+    } 
+
+    if (true === false) {
+        console.log('wont be displayed');
+    } else {
+        console.log('will be displayed');
+    }
+
+    let color = 'blue';
+    if (color === 'blue') {
+        console.log('its is blue');
+    } else if (color === 'green') {
+        console.log('it is green');
+    } else {
+        console.log(color);
+    }
+
+    if (1) {
+        console.log('truthy!');
+    }
+
+    let arr =['yes'];
+
+    if (arr.length) {
+        console.log('arrays has length');
+    }
+        // Ternary statement
+        (true) ? console.log('log for truthy') : console.log('logo for falsey'); //conditional, truthy operand, falsey operand
+        (5==4) ? console.log('log for truthy') : console.log('logo for falsey'); //log for falsey
+        (5==5) ? console.log('log for truthy') : console.log('logo for falsey'); //log for truthy
 
 })();
