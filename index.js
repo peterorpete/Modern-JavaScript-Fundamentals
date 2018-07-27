@@ -164,3 +164,13 @@ let myThing1; //good
         var testVariable = 'test'; //order of variable dont matter inside functions, BUT console log declared undefined. read above
     }
 })();
+(function () {
+    'use strict';
+
+    let myArray = new Array(1);
+    let myArray2 = ['a value', 'second value', 'third value']; //recommend to use this form of array creation
+    myArray2[1]; // second value
+    myArray2[myArray2.length - 1]; // third value. 
+    myArray2[99] = 'something'; //adds 100 undefined items to the array, the exisiting one will stay there though
+})();
+
