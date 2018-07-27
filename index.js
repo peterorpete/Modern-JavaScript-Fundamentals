@@ -198,3 +198,23 @@ let myThing1; //good
     console.log(getThingsByColor('')); // Sorry, no thing of that color exists
     
 })();
+
+////////
+// Sets
+////////
+(function () {
+    'use strict';
+
+    let myset = new Set();
+    let anArray = [1,1,1,2,2,3];
+    let mySet2 = new Set(anArray); //created a set and passed array to it
+
+    console.log(mySet2); // 1,2,3. Just shows the unique values, so got rid of the duplicates
+    console.log(mySet2.size); // 3 
+    mySet2.add(4).add(5);
+    mySet2.delete(1); //the value, not the index (as unique)
+    mySet2.delete(6); //false as no 6
+    console.log(mySet2); // 2 3 4 5
+    console.log(mySet2.delete(6)); // false
+    console.log(mySet2.has(3)); // true!!!
+})();
