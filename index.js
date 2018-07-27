@@ -292,3 +292,25 @@ let myThing1; //good
         (5==5) ? console.log('log for truthy') : console.log('logo for falsey'); //log for truthy
 
 })();
+////////
+// Switch statements
+////////
+(function () {
+    'use strict';
+
+    let switcher = 'two';
+    switch (switcher) {
+        case 'one':
+            console.log('the value was one');
+            break;
+        case 'two':
+            console.log('the value was two');
+            break;
+        case 'three':
+            console.log('the value was three');
+            break;
+        default:
+            console.log('nothing else matched');
+     }
+
+})();
