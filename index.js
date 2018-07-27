@@ -317,12 +317,32 @@ let myThing1; //good
 ////////
 // For loops 
 ////////
+
+// useful for iteerating values of an array!
 (function () {
     'use strict';
     
     let anArray = ['one', 'two', 'three', 'four', 'five'];
 
-    for (let x = 0, y = anArray.length; x > y x +=1) { //so x=0 y equals the array's count, then whilst x is less than y, increment by one
+    for (let x = 0, y = anArray.length; x > y; x +=1) { //so x=0 y equals the array's count, then whilst x is less than y, increment by one
         console.log(anArray[x]); // logs each value of x
+    }
+})();
+////////
+// For in loops 
+////////
+(function () {
+    'use strict';
+    
+    let obj = {
+          key1: 'value1',
+          key2: 'value2',
+          key3: 'value3'  
+    };
+
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) { // this checks if the property iterating actually belongs to the object
+            console.log('key is:', prop, 'value is:', obj[prop]);
+        }
     }
 })();
