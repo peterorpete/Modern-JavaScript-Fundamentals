@@ -378,3 +378,18 @@ let myThing1; //good
 
 
 })();
+
+////////
+// Iterators 
+////////
+(function () {
+    'use strict';
+
+    let mySet2 = new Set(['a','b','c']);
+    let SetItems = mySet2.entries();
+    console.log (SetItems.next());
+    console.log(SetItems.next()); 
+    console.log(SetItems.next()); 
+    console.log(SetItems.next()); //true
+
+})();
