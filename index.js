@@ -393,3 +393,26 @@ let myThing1; //good
     console.log(SetItems.next()); //true
 
 })();
+
+////////
+// While 
+////////
+(function () {
+    'use strict';
+
+    let limit = 0;
+    while (limit < 5) {
+        if (limit === 3 ) {
+            break;
+        }
+        console.log(limit  += 1);
+
+    }
+
+    let condition = true;
+    do {
+        console.log ("executed once");
+        condition = false;
+    } while(condition); // will only execute once as we changed the let variable
+
+})();
