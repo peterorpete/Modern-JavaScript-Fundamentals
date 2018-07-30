@@ -1,5 +1,4 @@
-﻿
-// Variables
+﻿// Variables
 ////////////////////////////////
 var foo = 42;
 foo = 43;
@@ -414,5 +413,31 @@ let myThing1; //good
         console.log ("executed once");
         condition = false;
     } while(condition); // will only execute once as we changed the let variable
+
+})();
+////////
+// Workign with strings 
+////////
+(function () {
+    'use strict';
+
+    let testString = 'this is a test string';
+    console.log(testString.length); //21
+
+    let strArr = testString.split(' '); //Split converts a string into an array using space as the spilt character.
+    console.log(strArr); //(5) ["this", "is", "a", "test", "string"]
+
+    console.log(testString.indexOf('is')); //2 (remember starts on 0) the is is inside this
+    console.log(testString.lastIndexOf('is')); //5 (remember starts on 0) this is is the last occurance of is so the word is.
+    console.log(testString.toUpperCase()); 
+    console.log(testString.toLowerCase());
+
+    console.log(testString.substring(8)); //=a test string
+    console.log(testString.substring(8,9)); //=a
+
+    console.log(testString.slice(8)); //=a test string
+    console.log(testString.slice(8,9)); //=a //difference between substringa nd slice is slick can accept negative numbers.
+    console.log(testString.slice(-6)); //=string (works backgrounds)
+    console.log(testString.trim()); //=string (works backgrounds)
 
 })();
