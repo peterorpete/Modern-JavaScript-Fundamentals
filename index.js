@@ -416,7 +416,7 @@ let myThing1; //good
 
 })();
 ////////
-// Workign with strings 
+// Working with strings 
 ////////
 (function () {
     'use strict';
@@ -438,6 +438,49 @@ let myThing1; //good
     console.log(testString.slice(8)); //=a test string
     console.log(testString.slice(8,9)); //=a //difference between substringa nd slice is slick can accept negative numbers.
     console.log(testString.slice(-6)); //=string (works backgrounds)
-    console.log(testString.trim()); //=string (works backgrounds)
+    console.log('  test     '.trim()); //=string (works backgrounds)
 
+})();
+////////
+// Template Literals 
+////////
+(function () {
+    'use strict';
+
+    let template1 = `this is a template literal`;
+    let template2 = `this is a 
+    template1 literal`; //respects the returns, basically all stuff space, new lines is respected.
+    let a = 'S',
+        b = 'something';
+    console.log (`a is ${a}, which ${b} else, and the ${reverse('thing')} is reversed'`); //dont have to escape the variables and functions!
+
+    function reverse(string) {
+        return string.split('').reverse().join('') //breaks into array, reverses it and joins back into string, boom!;
+    }
+
+    function buildStr(strings, ...values) {
+        return strings[3] + values[2] + strings[2] + values[1] + strings[1] + values[0] + strings[0];;
+    }
+    console.log(buildStr`a is ${a}, while b is ${b} else, and ${reverse(b)} is reversed`); // idont know whats going on here
+})();
+////////
+// Numbers 
+////////
+(function () {
+
+    console.log(Number.isNaN(5 * "opps!")); //true as cant be done.
+
+    let floatstring = '1.5 twat';
+    let intString = '3 hey';
+    console.log(typeof floatstring); //string
+    console.log(typeof intString); //string
+    console.log(typeof Number.parseFloat(floatstring)); //number, also both remove any letters if needed, numbers need to at start though
+    console.log(typeof Number.parseInt(intString)); //number
+
+    let num = 5.67889;
+    console.log(num.toFixed(2)); //number of decimals
+    console.log(num.toExponential());
+    console.log(num.toLocaleString());
+    console.log(num.toPrecision(2)); //number of digits
+    console.log(typeof num.toString()); //converts to a string
 })();
