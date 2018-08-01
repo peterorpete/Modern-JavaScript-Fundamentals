@@ -467,6 +467,7 @@ let myThing1; //good
 // Numbers 
 ////////
 (function () {
+    'use strict';
 
     console.log(Number.isNaN(5 * "opps!")); //true as cant be done.
 
@@ -483,4 +484,108 @@ let myThing1; //good
     console.log(num.toLocaleString());
     console.log(num.toPrecision(2)); //number of digits
     console.log(typeof num.toString()); //converts to a string
+})();
+////////
+// Arrays 
+////////
+(function () {
+    'use strict';
+
+    let array = ['one', 'two', 'three'];
+    console.log(array.length); //3
+    array.push('four'); //added an extra item to the end of the array
+    array.unshift('zero'); //added zero to the start of the array
+    console.log(array); //(5) ["zero", "one", "two", "three", "four"]
+    array.pop(); //removes the last item of the array
+    array.shift(); //removes item from start of the array
+    console.log(array); //(3) ["one", "two", "three"]
+    array.splice(0); //removes everythign from array
+    console.log(array); //[]
+
+    array = ['one', 'two', 'three'];
+    array.splice(0, 2); //removes 2 items array. STarts from beginning
+    console.log(array); //["three"]
+
+    array = ['one', 'two', 'three'];
+    array.splice(0, 3, 'a', 'b', 'c'); //removes 3 items array. Then adds 3 new items to array
+    console.log(array); //(3) ["a", "b", "c"]
+    array.reverse(); //reverses item order array
+    console.log(array); //(3) ["c", "b", "a"]
+    array.sort(); //sorts array in alphabetical order but puts caps to front!
+    console.log(array); //(3) ["a", "b", "c"]
+    array.splice(0, 3, 'a', 'b', 'C');
+    array.sort(); //capital c will go to front
+    console.log(array); //(3) ["C", "a", "b"]
+
+    console.log([3, 10000, 20].sort()); //(3) [10000, 20, 3]
+    //order is not ideal the 10000 goes first followed by 20 as it sorts by first digit
+    console.log([3, 10000, 20].sort(function (a,b) { //comparator function??
+        return a - b;
+    })); //
+    console.log(['b', 'C', 'a', 'D'].sort(function (a,b) { //comparator function??
+        let LowerCaseA = a.toLowerCase(),
+            LowerCaseB = b.toLowerCase();
+        if (LowerCaseA < LowerCaseB) {
+            return -1;
+        } else if (LowerCaseA == LowerCaseB) {
+            return 0;
+        } else {
+            return 1;
+        }
+    })); // kind of understand this one better, bascially attaches a value to each to determine order, not sure what happens when two -1 etc 
+
+    console.log(array.join('')); //Cab
+    // Join converts an array into a string
+    console.log(array.join('-')); //C-a-b
+    //argument is the character inbetween each arrays item
+    console.log(array.indexOf('b')); //2
+    console.log(array.indexOf('g')); //-1 means none
+    console.log(array.slice(1)); //(2) ["a", "b"]
+    //Slice slices an array at a point
+    console.log(array.slice(1, 2)); //["a"]
+    //slices second argument stops the slice at a point
+
+})();
+////////
+// Strings 
+////////
+(function () {
+    'use strict';
+    
+    let array = ['x', 'y', 'z'];
+
+    array.forEach(function(currentItem) {//goes through everything
+        console.log(currentItem);
+    });
+    array.some(function(currentItem) {//some stops when it returns true
+        console.log('iterating...');
+        return currentItem === 'y'; //only console logs twice as it stops when some record is true
+    });
+    array.every(function(currentItem) { //every stops when it returns false 
+        console.log('also iterating...');
+        return currentItem !== 'x'; //only returns one as the first item is X so this equals false.
+    });
+    array.every(function(currentItem) { //every stops when it returns false 
+        console.log('also iterating...');
+        return currentItem !== 'x'; //only returns one as the first item is X so this equals false.
+    });
+     
+    let arr = [1,2,3,4,5];
+    let sum = arr.reduce(function(previous, current) {
+        return previous + current;
+    }, 0); // adds all the array items together
+    console.log(arr);
+
+    let refs = {
+        a: 'alpha',
+        b: 'beta',
+        g: 'gamma'
+    };
+
+    let arr2 = ['a', 'b', 'b'];
+    //map array takes value of orginal array and transform them into a new array.
+    let result = arr2.map(function (currentItem) {
+        return refs[currentItem];
+    });
+    console.log(result);
 })();
